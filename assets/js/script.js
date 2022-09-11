@@ -28,49 +28,23 @@ var colorCodehour = function() {
 
 colorCodehour();
 
-// Below is a version of the save button mechanism that I tried based on work with Poornima in office hours
+
 
 saveBtn = document.querySelector(".saveBtn");
-notesToSave = document.querySelectorAll("textArea").values;
+// notesToSave = document.querySelectorAll("textArea").values;
 
 saveBtn.addEventListener("click", function(event) {
     if (event.target.matches(".saveBtn")) {
         var timeInfo = event.target.parentElement.value; 
-        // I had an issure here traversing the domain in the proper way to label this dataset correctly
+        // I had an issue here traversing the dom in the proper way to label this dataset correctly.
         var noteContent = event.target.parentElement.children[1].children[0].value;
     localStorage.setItem("time-"+ timeInfo, noteContent);
     }
 })
 
-// $('.saveBtn').on('click'), function() {
-//     var toBeSaved
-//     var storedData = JSON.parse(localStorage.getItem('schedule-data'))
+// You will notice I was only able to get the text input to be saved for the first line.
+// My next step will be to establish the function I wrote for local storage on the first line to save it for every line, with the proper labels. Followed by a step to make sure the locally stored data is presented on the screen after refresh.
 
-//     console.log('You got clicked', $(this).attr('name'));
-
-//     var dataToBegin = {
-//         9:'',
-//         10:'',
-//         11:'',
-//         12:'',
-//         1:'',
-//         2:'',
-//         3:'',
-//         4:'',
-//         5:''
-//     }
-
-//     if (storedData){
-//         toBeSaved = storedData
-//     } else {
-//         toBeSaved = dataToBegin
-//     }
-//     toBeSaved[$(this).attr('name')] = $('#input-' + $(this).attr('name')).val()
-
-//     var storeData = JSON.stringify(toBeSaved)
-
-//     localStorage.setItem('schedule-data', storeData)
-// }
 
 
 
